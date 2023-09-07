@@ -14,6 +14,12 @@ class MascotaResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'nombre' => $request->nombre,
+            'raza' => $request->raza,
+            'estatura cm' => $request->raza,
+            'peso' => $request->raza,
+            'edad' => $request->raza,
+        ];
     }
 }

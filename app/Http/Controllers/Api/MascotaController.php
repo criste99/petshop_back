@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Mascota;
 use Illuminate\Http\Request;
+use App\Http\Resources\MascotaResource;
 
 class MascotaController extends Controller
 {
@@ -13,7 +14,7 @@ class MascotaController extends Controller
      */
     public function index()
     {
-        return Mascota::all();
+        return MascotaController::collection(Mascota::all());
     }
 
     /**
@@ -21,30 +22,42 @@ class MascotaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $mascota = Mascota::create([
+            'nombre' => $request->nombre,
+            'raza' => $request->raza,
+            'estatura cm' => $request->estaturacm,
+            'peso' => $request->peso,
+            'edad' => $request->edad,
+        ]);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Mascota $mascota)
     {
-        //
+        return new MascotaResource($mascota);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Mascota $mascota)
     {
-        //
+        $mascota->update([
+            'nombre' => $request->nombre,
+            'raza' => $request->raza,
+            'estatura cm' => $request->raza,
+            'peso' => $request->raza,
+            'edad' => $request->raza,
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Mascota $mascota)
     {
-        //
+        $mascota->delete();
     }
 }
