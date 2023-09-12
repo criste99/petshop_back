@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('dueño', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('tipop_id');
+            $table->string('tipo_id');
             $table->string('identificacion');
-            $table->string('edad');
+            $table->integer('edad');
             $table->string('correo');
             $table->string('telefono');
             $table->timestamps();

@@ -17,7 +17,8 @@ class ComidaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'marca' => $this->faker->word,
+            'descripcion' => $this->faker->word,
         ];
     }
 }

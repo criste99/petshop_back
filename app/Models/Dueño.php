@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Dueño extends Model
 {
     use HasFactory;
+    protected $table = 'dueño';
+
+    protected $fillable = [
+        'nombre',
+        'tipo_id',
+        'identificacion',
+        'edad',
+        'correo',
+        'telefono',
+    ];
 }

@@ -14,6 +14,13 @@ class DueñoResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'nombre' => $this->nombre,
+            'tipo_id' => $this->tipo_id,
+            'identificacion' => $this->identificacion,
+            'correo' => $this->correo,
+            'telefono' => $this->telefono,
+        ];
+        
     }
 }

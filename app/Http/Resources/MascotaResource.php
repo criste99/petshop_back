@@ -15,11 +15,11 @@ class MascotaResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'nombre' => $request->nombre,
-            'raza' => $request->raza,
-            'estatura cm' => $request->raza,
-            'peso' => $request->raza,
-            'edad' => $request->raza,
+            'nombre' => $this->nombre,
+            'raza' => $this->raza,
+            'estatura cm' => $this->estaturacm,
+            'peso' => $this->peso,
+            'edad' => $this->edad,
         ];
     }
 }

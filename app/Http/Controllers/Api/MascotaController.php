@@ -14,7 +14,7 @@ class MascotaController extends Controller
      */
     public function index()
     {
-        return MascotaController::collection(Mascota::all());
+        return MascotaResource::collection(Mascota::latest()->paginate());
     }
 
     /**
@@ -47,9 +47,9 @@ class MascotaController extends Controller
         $mascota->update([
             'nombre' => $request->nombre,
             'raza' => $request->raza,
-            'estatura cm' => $request->raza,
-            'peso' => $request->raza,
-            'edad' => $request->raza,
+            'estatura cm' => $request->estaturacm,
+            'peso' => $request->peso,
+            'edad' => $request->edad,
         ]);
     }
 

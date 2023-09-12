@@ -14,7 +14,7 @@ class ComidaController extends Controller
      */
     public function index()
     {
-        return ComidaController::collection(Comida::all());
+        return ComidaResource::collection(Comida::latest()->paginate());
     }
 
     /**
@@ -23,7 +23,7 @@ class ComidaController extends Controller
     public function store(Request $request)
     {   $dueno = Comida::create([
         'marca' => $request->marca,
-            'tipop_id' => $request->tipop_id,
+            'descripcion' => $request->descripcion,
         ]);
     }
 
@@ -42,15 +42,15 @@ class ComidaController extends Controller
     {
         $comida->update([
             'marca' => $request->marca,
-            'tipop_id' => $request->tipop_id,
+            'descripcion' => $request->descripcion,
         ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Comida $comida)
     {
-        //
+        $comida->delete();
     }
 }

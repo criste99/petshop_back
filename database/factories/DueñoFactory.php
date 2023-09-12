@@ -17,7 +17,12 @@ class DueñoFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nombre' => $this->faker->name,
+            'tipo_id' => $this->faker->word,
+            'identificacion' => $this->faker->numberBetween(1111111,9999999),
+            'edad' => $this->faker->numberBetween(18,99),
+            'correo' => $this->faker->safeEmail,
+            'telefono' => $this->faker->numberBetween(1111111,9999999),
         ];
     }
 }

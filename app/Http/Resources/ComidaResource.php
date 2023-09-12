@@ -16,8 +16,8 @@ class ComidaResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'marca' => $this->name,
-            'descripcion' => $this->name,
+            'marca' => $this->marca,
+            'descripcion' => $this->descripcion,
         ];
     }
 }

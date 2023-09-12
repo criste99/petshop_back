@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\ComidaController;
+use App\Http\Controllers\Api\DueñoController;
+use App\Http\Controllers\Api\MascotaController;
 use App\Models\Comida;
 use App\Models\Dueño;
 use App\Models\Mascota;
@@ -21,11 +24,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('/mascota', Mascota::class)
+Route::apiResource('/mascota', MascotaController::class)
     ->only(['index', 'show', 'put', 'delete']);
 
-Route::apiResource('/Dueño', Dueño::class)
+Route::apiResource('/dueno', DueñoController::class)
     ->only(['index', 'show', 'put', 'delete']);
 
-Route::apiResource('/Comida', Comida::class)
+Route::apiResource('/comida', ComidaController::class)
     ->only(['index', 'show', 'put', 'delete']);

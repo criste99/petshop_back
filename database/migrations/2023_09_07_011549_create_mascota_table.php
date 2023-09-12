@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('raza');
-            $table->integer('estatura cm');
-            $table->integer('peso');
-            $table->float('edad');
+            $table->float('estatura cm');
+            $table->float('peso');
+            $table->integer('edad');
             $table->timestamps();
         });
     }

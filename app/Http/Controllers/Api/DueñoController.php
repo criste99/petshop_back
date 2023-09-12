@@ -14,7 +14,7 @@ class DueñoController extends Controller
      */
     public function index()
     {
-        return DueñoController::collection(Dueño::all());
+        return DueñoResource::collection(Dueño::latest()->paginate());
     }
 
     /**
@@ -24,7 +24,7 @@ class DueñoController extends Controller
     {
         $dueno = Dueño::create([
             'nombre' => $request->nombre,
-            'tipop_id' => $request->tipop_id,
+            'tipo_id' => $request->tipo_id,
             'identificacion' => $request->identificacion,
             'correo' => $request->correo,
             'telefono' => $request->telefono,
@@ -46,7 +46,7 @@ class DueñoController extends Controller
     {
         $dueno->update([
             'nombre' => $request->nombre,
-            'tipop_id' => $request->tipop_id,
+            'tipo_id' => $request->tipo_id,
             'identificacion' => $request->identificacion,
             'correo' => $request->correo,
             'telefono' => $request->telefono,
