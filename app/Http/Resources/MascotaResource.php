@@ -17,7 +17,7 @@ class MascotaResource extends JsonResource
         return [
             'nombre' => $this->nombre,
             'raza' => $this->raza,
-            'estatura cm' => $this->estaturacm,
+            'estaturacm' => $this->estaturacm,
             'peso' => $this->peso,
             'edad' => $this->edad,
         ];

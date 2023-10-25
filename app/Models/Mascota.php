@@ -12,7 +12,7 @@ class Mascota extends Model
     protected $fillable = [
         'nombre',
         'raza',
-        'estatura cm',
+        'estatura_cm',
         'peso',
         'edad',
     ];

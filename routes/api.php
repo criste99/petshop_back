@@ -25,10 +25,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('/mascota', MascotaController::class)
-    ->only(['index', 'show', 'put', 'delete']);
+    ->only(['index', 'show', 'put', 'delete','store']);
 
 Route::apiResource('/dueno', DueñoController::class)
-    ->only(['index', 'show', 'put', 'delete']);
+    ->only(['index', 'show', 'put', 'delete','store']);
 
 Route::apiResource('/comida', ComidaController::class)
-    ->only(['index', 'show', 'put', 'delete']);
+    ->only(['index', 'show', 'put', 'delete','store']);
