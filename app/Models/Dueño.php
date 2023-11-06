@@ -14,7 +14,6 @@ class Dueño extends Model
         'nombre',
         'tipo_id',
         'identificacion',
-        'edad',
         'correo',
         'telefono',
     ];

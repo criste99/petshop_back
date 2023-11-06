@@ -15,9 +15,9 @@ class MascotaResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'id' => $this->id,
             'nombre' => $this->nombre,
             'raza' => $this->raza,
-            'estaturacm' => $this->estaturacm,
             'peso' => $this->peso,
             'edad' => $this->edad,
         ];

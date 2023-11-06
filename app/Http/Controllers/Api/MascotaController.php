@@ -25,7 +25,6 @@ class MascotaController extends Controller
         $mascota = Mascota::create([
             'nombre' => $request->nombre,
             'raza' => $request->raza,
-            'estaturacm' => $request->estaturacm,
             'peso' => $request->peso,
             'edad' => $request->edad,
         ]);
@@ -47,7 +46,6 @@ class MascotaController extends Controller
         $mascota->update([
             'nombre' => $request->nombre,
             'raza' => $request->raza,
-            'estaturacm' => $request->estaturacm,
             'peso' => $request->peso,
             'edad' => $request->edad,
         ]);

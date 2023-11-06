@@ -15,6 +15,7 @@ class DueñoResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'id' => $this->id,
             'nombre' => $this->nombre,
             'tipo_id' => $this->tipo_id,
             'identificacion' => $this->identificacion,
